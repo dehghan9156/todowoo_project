@@ -1,0 +1,10 @@
+{% extends 'todo/base.html'%}
+{% block content%}
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'accounts:logoutuser' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'accounts:signupuser' %}">Signup</a>
+        <a href="{% url 'accounts:loginuser' %}">Login</a>
+    {% endif %}
+
+{% endblock%}
