@@ -1,9 +1,19 @@
 {% extends 'todo/base.html' %}
 {% block content %}
-<body>
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="register">
-</form>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <h2>Sign Up</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input class="btn btn-primary" type="submit" value="register">
+            </form>
+            <hr>
+            <div class="text-center">
+                Do you already have an account? <a href="{% url 'accounts:loginuser' %}">Login here</a>
+            </div>
 {% endblock %}

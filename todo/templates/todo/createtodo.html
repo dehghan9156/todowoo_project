@@ -1,9 +1,17 @@
 {% extends 'todo/base.html' %}
 {% block content %}
-    <form action="" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="create">
-    </form>
-
+ <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <h2>New Todo</h2>
+        </div>
+ </div>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="create" class="btn btn-primary">
+        </form>
+    </div>
+</div>
 {% endblock%}
